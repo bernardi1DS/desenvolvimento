@@ -1,0 +1,165 @@
+/* ======== Estilos Gerais ======== */
+body {
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  transition: background 0.5s;
+}
+
+/* ======== Login e Cadastro ======== */
+.login-container {
+  background: #ffffff;
+  padding: 30px 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 350px;
+  opacity: 0;
+  transform: translateY(-30px);
+  animation: fadeIn 0.6s forwards;
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  color: #004999;
+}
+
+label {
+  display: block;
+  margin-bottom: 5px;
+  color: #333;
+  font-weight: bold;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #004999;
+  border-radius: 6px;
+  transition: border 0.3s, box-shadow 0.3s;
+}
+
+input:focus {
+  border-color: #0066cc;
+  box-shadow: 0 0 8px rgba(0, 102, 204, 0.5);
+  outline: none;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  background: #004999;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+button:hover {
+  background: #003366;
+  transform: scale(1.05);
+}
+
+.error-message {
+  color: red;
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+  opacity: 0;
+  transition: opacity 0.4s;
+}
+
+.cadastro-link, .login-link {
+  text-align: center;
+  margin-top: 10px;
+  font-size: 14px;
+}
+
+.cadastro-link a, .login-link a {
+  color: #0066cc;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.cadastro-link a:hover, .login-link a:hover {
+  text-decoration: underline;
+}
+
+/* ======== Portal ======== */
+#portalPage {
+  background: #f2f2f2;
+  width: 100%;
+  min-height: 100vh;
+  opacity: 0;
+  animation: fadeIn 0.6s forwards;
+}
+
+header {
+  background: #004999;
+  color: white;
+  padding: 15px 20px;
+  text-align: center;
+  position: relative;
+}
+
+.logout-btn {
+  background: #cc0000;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  transition: background 0.3s;
+}
+
+.logout-btn:hover {
+  background: #990000;
+}
+
+main {
+  padding: 20px;
+}
+
+.news-card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  margin-bottom: 20px;
+  transform: translateY(20px);
+  opacity: 0;
+  animation: cardFadeIn 0.5s forwards;
+  animation-delay: 0.3s;
+}
+
+.news-card h3 {
+  color: #004999;
+  margin-top: 0;
+}
+
+/* ======== Animações ======== */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes cardFadeIn {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
