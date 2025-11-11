@@ -1,1 +1,13 @@
-É necessário valiar o o nome de usuario (aceitar somente caracteres)
+[RF-001] Tela de login  
+DESCRIÇÃO: o site deve apresentar ao usuário a tela inicial com o cardápio  
+PRIORIDADE: Alta  
+Entrada: E-mail válido e senha, com verificação por código.  
+PROCESSAMENTO: permitir verificação de dados que confirme o usuário.  
+SAÍDA: Acesso ao sistema ou mensagem de erro  
+Regras de Negócio:
+- Senha deve ter no mínimo 8 caracteres
+- Após 3 tentativas incorretas, bloquear por 15 minutos
+- Manter sessão ativa por 2 horas  
+Atores: Usuários registrados
+
+
