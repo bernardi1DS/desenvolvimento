@@ -1,13 +1,23 @@
-[RF-001] Tela de login  
-DESCRIÇÃO: o site deve apresentar ao usuário a tela inicial com o cardápio  
+[RF-001] Tela de Cadastro  
+DESCRIÇÃO: O site deve verificar se o usuario está digitando apenas caracteres no nome de usuario. 
 PRIORIDADE: Alta  
-Entrada: E-mail válido e senha, com verificação por código.  
-PROCESSAMENTO: permitir verificação de dados que confirme o usuário.  
-SAÍDA: Acesso ao sistema ou mensagem de erro  
+Entrada: O nome deve ser apenas caracteres. 
+PROCESSAMENTO: Verificar se o usuario está digitando apenas caracteres.  
+SAÍDA: Mensagem de erro ao tentar digitar numeros. 
 Regras de Negócio:
 - Senha deve ter no mínimo 8 caracteres
-- Após 3 tentativas incorretas, bloquear por 15 minutos
-- Manter sessão ativa por 2 horas  
-Atores: Usuários registrados
+Atores: Usuários sem cadastro
+
+[RF-002] Tela de Cadastro  
+DESCRIÇÃO: O site deve verificar se o usuario está digitando apenas caracteres no nome de usuario. 
+PRIORIDADE: Alta  
+Entrada: O nome deve ser apenas caracteres. 
+PROCESSAMENTO: Verificar se o usuario está digitando apenas caracteres.  
+SAÍDA: Mensagem de erro ao tentar digitar numeros. 
+Regras de Negócio:
+- Senha deve ter no mínimo 8 caracteres
+Atores: Usuários sem cadastro
+
+
 
 
