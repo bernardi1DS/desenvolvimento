@@ -8,8 +8,18 @@ Regras de Negócio:
 - Senha deve ter no mínimo 8 caracteres
 Atores: Usuários sem cadastro
 
-[RF-002] Tela de Cadastro  
-DESCRIÇÃO: O site deve verificar se o usuario está digitando apenas caracteres no nome de usuario. 
+[RF-002] Tela Inicial
+DESCRIÇÃO: Qualquer usuario pode acessar a tela inicial sem necessidade de login/cadastrado.
+PRIORIDADE: Alta  
+Entrada: Acessando o link.  
+PROCESSAMENTO: Carregar todas as notícias na tela inicial
+SAÍDA:Tela carregada 
+Regras de Negócio:
+- Não se aplica
+Atores: usuarios
+
+[RF-002] Tela de Login  
+DESCRIÇÃO: Caso o usuario queira cadastrar uma noticia, deve ser solicitado um login válido.
 PRIORIDADE: Alta  
 Entrada: O nome deve ser apenas caracteres. 
 PROCESSAMENTO: Verificar se o usuario está digitando apenas caracteres.  
@@ -17,6 +27,7 @@ SAÍDA: Mensagem de erro ao tentar digitar numeros.
 Regras de Negócio:
 - Senha deve ter no mínimo 8 caracteres
 Atores: Usuários sem cadastro
+
 
 
 
