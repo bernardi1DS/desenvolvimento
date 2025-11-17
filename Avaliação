@@ -1,0 +1,5 @@
+Realizei a verificaçã do código e tenho alguns pontos de observação:
+- Parabéns por ter corrigido o nome dos arquivos, é essencial que fiquem curtos e organizados.
+- Como vocês pegaram o código pronto do ChatGPT e depois colou no JSFiddle/Codepan, os arquivos daqui não se referenciam! e isso é um problema. Pois as funcionalidades não funcionam se não tiver referencia.
+- Existe um arquivo ".HTML" que não tem uma identificação, isso causa muita confusão, eu não sei qual é a serventia desse arquivo.
+- A documentação de vocês está Ok, mas acredito que esteja faltando elementos. Por mais que seja um projeto simples, precisa detalhar todas as funcionalidades.
