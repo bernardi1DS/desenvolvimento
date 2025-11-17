@@ -24,9 +24,11 @@
     <input type="text" id="newUsername" placeholder="Escolha seu usuário" required />
 
     <label for="newPassword">Senha:</label>
-    <input type="password" id="newPassword" placeholder="Crie sua senha" required />
+    <input type="password" id="newPassword" placeholder="Crie sua senha (mín. 8 caracteres)" required />
 
     <button type="submit">Cadastrar</button>
+
+    <p id="registerError" class="error-message">Erro no cadastro.</p>
 
     <p class="login-link">Já tem conta? <a href="#" id="backToLogin">Login</a></p>
   </form>
