@@ -1,11 +1,8 @@
 // ======== Armazenamento temporário ========
 let users = [
-  // usuário inicial ajustado para obedecer a regra de senha mínima (8 caracteres)
-  { username: "aluno", password: "senha1234" }
+  // Agora usando email como exemplo
+  { username: "aluno@escola.com", password: "senha1234" }
 ];
-
-// Regex para permitir apenas letras (inclui letras acentuadas) e espaços
-const usernameRegex = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/;
 
 // ======== Login ========
 document.getElementById("loginForm").addEventListener("submit", function (event) {
@@ -14,7 +11,6 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
   const password = document.getElementById("password").value.trim();
   const errorMsg = document.getElementById("errorMsg");
 
-  // Limpa mensagem anterior
   errorMsg.style.opacity = "0";
 
   if (username === "" || password === "") {
@@ -23,21 +19,15 @@ document.getElementById("loginForm").addEventListener("submit", function (event)
     return;
   }
 
-  // Verifica se o username contém apenas caracteres (letras e espaços)
-  if (!usernameRegex.test(username)) {
-    errorMsg.textContent = "O nome de usuário deve conter apenas letras.";
-    errorMsg.style.opacity = "1";
-    return;
-  }
+  // Não restringe mais para só letras: aceita qualquer email digitado
 
-  // Verifica se o usuário existe na lista
   const user = users.find(u => u.username.toLowerCase() === username.toLowerCase() && u.password === password);
   if (user) {
     document.getElementById("loginPage").style.display = "none";
     document.getElementById("portalPage").style.display = "block";
     errorMsg.style.opacity = "0";
   } else {
-    errorMsg.textContent = "Usuário ou senha incorretos.";
+    errorMsg.textContent = "Email ou senha incorretos.";
     errorMsg.style.opacity = "1";
   }
 });
@@ -64,7 +54,6 @@ document.getElementById("registerForm").addEventListener("submit", function(even
   const newPassword = document.getElementById("newPassword").value.trim();
   const registerError = document.getElementById("registerError");
 
-  // Limpa mensagem anterior
   registerError.style.opacity = "0";
 
   if(newUsername === "" || newPassword === "") {
@@ -73,39 +62,28 @@ document.getElementById("registerForm").addEventListener("submit", function(even
     return;
   }
 
-  // Valida nome: apenas caracteres (letras/acentos/espaços)
-  if (!usernameRegex.test(newUsername)) {
-    registerError.textContent = "O nome de usuário deve conter apenas letras.";
-    registerError.style.opacity = "1";
-    return;
-  }
+  // Não restringe mais para só letras: aceita qualquer email digitado
 
-  // Valida senha: mínimo 8 caracteres
   if (newPassword.length < 8) {
     registerError.textContent = "A senha deve ter no mínimo 8 caracteres.";
     registerError.style.opacity = "1";
     return;
   }
 
-  // Verifica se o usuário já existe (case-insensitive)
+  // Verifica se o email já existe (case-insensitive)
   const exists = users.some(u => u.username.toLowerCase() === newUsername.toLowerCase());
   if (exists) {
-    registerError.textContent = "Nome de usuário já existe. Escolha outro.";
+    registerError.textContent = "Email já cadastrado. Escolha outro.";
     registerError.style.opacity = "1";
     return;
   }
 
-  // Adiciona novo usuário à lista
   users.push({ username: newUsername, password: newPassword });
 
-  // Mensagem de sucesso (pode ser alterado para modal ou toast)
   alert("Cadastro realizado com sucesso! Agora faça login.");
 
-  // Redireciona para login
   document.getElementById("registerPage").style.display = "none";
   document.getElementById("loginPage").style.display = "block";
-
-  // Limpa campos e mensagens
   document.getElementById("newUsername").value = "";
   document.getElementById("newPassword").value = "";
   registerError.style.opacity = "0";
