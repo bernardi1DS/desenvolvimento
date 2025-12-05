@@ -1,3 +1,14 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal Escolar</title>
+  <link rel="stylesheet" href="style.CSS">
+  <script defer src="script.js"></script>
+</head>
+<body>
 <!-- Tela de Login -->
 <div class="login-container" id="loginPage">
   <h2>Portal Escolar</h2>
@@ -6,14 +17,16 @@
     <input type="text" id="username" placeholder="Digite seu email escolar" required />
 
     <label for="password">Senha:</label>
-    <input type="password" id="password" placeholder="Digite sua senha" required />
-
+    <div class="input-group">
+      <input type="password" id="password" placeholder="Digite sua senha" required />
+    </div>
     <button type="submit">Entrar</button>
 
     <p id="errorMsg" class="error-message">Usuário ou senha incorretos.</p>
 
     <p class="cadastro-link">Não tem conta? <a href="#" id="goToRegister">Cadastre-se</a></p>
   </form>
+  <p class="admin-link"><a href="#" id="goToAdminLogin">Login Administrador</a></p>
 </div>
 
 <!-- Tela de Cadastro -->
@@ -34,22 +47,51 @@
   </form>
 </div>
 
+<!-- Tela de Login Admin -->
+<div class="login-container" id="adminLoginPage" style="display:none;">
+  <h2>Login Administrador</h2>
+  <form id="adminLoginForm">
+    <label for="adminUser">Usuário:</label>
+    <input type="text" id="adminUser" placeholder="Usuário admin" required />
+    <label for="adminPass">Senha:</label>
+    <input type="password" id="adminPass" placeholder="Senha admin" required />
+    <button type="submit">Entrar</button>
+    <p id="adminErrorMsg" class="error-message">Usuário ou senha incorretos.</p>
+    <p class="login-link"><a href="#" id="backToUserLogin">Login Usuário</a></p>
+  </form>
+</div>
+
 <!-- Tela do Portal -->
 <div id="portalPage" style="display:none;">
   <header>
     <h1>Portal de Notícias Escolar</h1>
     <button class="logout-btn" onclick="logout()">Sair</button>
   </header>
-
-  <main>
-    <div class="news-card">
-      <h3>Culminância 2025</h3>
-      <p>Anunciamos o início da Culminância Escolar, momento destinado à exposição dos projetos e aprendizagens construídos. </p>
-    </div>
-
-    <div class="news-card">
-      <h3>Calendário Escolar Atualizado</h3>
-      <p>As datas das avaliações finais já estão disponíveis no calendário escolar.</p>
-    </div>
+  <main id="newsContainer">
+    <!-- Cards de notícias serão inseridos pelo JS -->
   </main>
 </div>
+
+<!-- Tela Admin Portal -->
+<div id="adminPortalPage" style="display:none;">
+  <header>
+    <h1>Administração de Notícias</h1>
+    <button class="logout-btn" onclick="logoutAdmin()">Sair</button>
+  </header>
+  <main>
+    <section class="admin-news-form">
+      <h3>Criar Nova Notícia</h3>
+      <form id="createNewsForm">
+        <input type="text" id="newsTitle" placeholder="Título da notícia" required />
+        <textarea id="newsContent" placeholder="Conteúdo da notícia" required></textarea>
+        <button type="submit">Criar Notícia</button>
+      </form>
+    </section>
+    <section class="admin-news-list">
+      <h3>Editar Notícias</h3>
+      <div id="adminNewsContainer"></div>
+    </section>
+  </main>
+</div>
+</body>
+</html>

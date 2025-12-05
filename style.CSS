@@ -4,50 +4,64 @@ body {
   background: linear-gradient(135deg, #007bff, #0056b3);
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
+  align-items: flex-start;
+  min-height: 100vh;
   margin: 0;
   transition: background 0.5s;
+  padding: 0;
+  overflow-x: hidden;
 }
 
 /* ======== Login e Cadastro ======== */
 .login-container {
   background: #ffffff;
-  padding: 30px 40px;
-  border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+  padding: 36px 44px;
+  border-radius: 14px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
   width: 100%;
-  max-width: 350px;
+  max-width: 370px;
+  margin: 40px auto 24px auto;
   opacity: 0;
   transform: translateY(-30px);
   animation: fadeIn 0.6s forwards;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
 }
 
 .login-container h2 {
   text-align: center;
-  margin-bottom: 20px;
+  margin-bottom: 18px;
   color: #004999;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
 label {
   display: block;
-  margin-bottom: 5px;
+  margin-bottom: 4px;
   color: #333;
   font-weight: bold;
 }
 
-input {
+input, textarea {
   width: 100%;
   padding: 12px;
-  margin-bottom: 15px;
+  margin-bottom: 8px;
   border: 1px solid #004999;
   border-radius: 6px;
   transition: border 0.3s, box-shadow 0.3s;
+  font-size: 15px;
+  box-sizing: border-box;
 }
 
-input:focus {
+input:focus, textarea:focus {
   border-color: #0066cc;
-  box-shadow: 0 0 8px rgba(0, 102, 204, 0.5);
+  box-shadow: 0 0 8px rgba(0, 102, 204, 0.15);
   outline: none;
 }
 
@@ -61,35 +75,36 @@ button {
   font-size: 16px;
   cursor: pointer;
   transition: background 0.3s, transform 0.2s;
+  margin-top: 4px;
 }
 
 button:hover {
   background: #003366;
-  transform: scale(1.05);
+  transform: scale(1.04);
 }
 
 .error-message {
   color: red;
   text-align: center;
-  margin-top: 10px;
+  margin-top: 8px;
   font-size: 14px;
   opacity: 0;
   transition: opacity 0.4s;
 }
 
-.cadastro-link, .login-link {
+.cadastro-link, .login-link, .admin-link {
   text-align: center;
-  margin-top: 10px;
+  margin-top: 8px;
   font-size: 14px;
 }
 
-.cadastro-link a, .login-link a {
+.cadastro-link a, .login-link a, .admin-link a {
   color: #0066cc;
   text-decoration: none;
   font-weight: bold;
 }
 
-.cadastro-link a:hover, .login-link a:hover {
+.cadastro-link a:hover, .login-link a:hover, .admin-link a:hover {
   text-decoration: underline;
 }
 
@@ -100,53 +115,52 @@ button:hover {
   min-height: 100vh;
   opacity: 0;
   animation: fadeIn 0.6s forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 32px;
 }
 
 header {
   background: #004999;
   color: white;
-  padding: 15px 20px;
+  padding: 18px 0;
   text-align: center;
   position: relative;
-}
-
-.logout-btn {
-  background: #cc0000;
-  color: white;
-  border: none;
-  padding: 10px 15px;
-  border-radius: 6px;
-  cursor: pointer;
-  font-size: 14px;
-  position: absolute;
-  right: 20px;
-  top: 15px;
-  transition: background 0.3s;
-}
-
-.logout-btn:hover {
-  background: #990000;
+  width: 100%;
+  margin-bottom: 18px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
 }
 
 main {
-  padding: 20px;
+  padding: 18px 0;
+  width: 100%;
+  max-width: 650px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
 }
 
 .news-card {
   background: white;
-  padding: 20px;
+  padding: 22px 20px 18px 20px;
   border-radius: 10px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
-  margin-bottom: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.13);
+  margin-bottom: 0;
   transform: translateY(20px);
   opacity: 0;
   animation: cardFadeIn 0.5s forwards;
   animation-delay: 0.3s;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
 }
 
 .news-card h3 {
   color: #004999;
   margin-top: 0;
+  margin-bottom: 6px;
 }
 
 /* ======== Animações ======== */
@@ -162,4 +176,99 @@ main {
     transform: translateY(0);
     opacity: 1;
   }
+}
+
+/* ======== Administrador ======== */
+#adminPortalPage {
+  background: #f8f9fa;
+  min-height: 100vh;
+  width: 100vw;
+  max-width: 100vw;
+  box-sizing: border-box;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+#adminPortalPage header {
+  background: #004999;
+  color: white;
+  padding: 22px 0;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  margin-bottom: 24px;
+}
+
+.admin-news-form {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.10);
+  padding: 28px 36px;
+  margin: 32px 0 24px 0;
+  width: 100%;
+  max-width: 440px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.admin-news-form h3 {
+  margin-bottom: 8px;
+  color: #004999;
+}
+
+#newsTitle, #newsContent {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #004999;
+  border-radius: 6px;
+  font-size: 15px;
+  margin-bottom: 8px;
+  resize: vertical;
+  box-sizing: border-box;
+}
+
+#newsContent {
+  min-height: 60px;
+  max-height: 180px;
+}
+
+#newsTitle:focus, #newsContent:focus {
+  border-color: #0066cc;
+  box-shadow: 0 0 8px rgba(
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.input-group input[type="password"],
+.input-group input[type="text"] {
+  flex: 1;
+  padding-right: 38px;
+}
+.toggle-password-btn {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: transparent;
+  font-size: 18px;
+  cursor: pointer;
+  padding: 0 6px;
+  outline: none;
+  transition: color 0.2s;
+  z-index: 2;
+}
+.toggle-password-btn.visible {
+  color: #004999;
+}
+.toggle-password-btn:active {
+  color: #003366;
 }
